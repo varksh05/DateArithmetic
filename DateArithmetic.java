@@ -153,7 +153,7 @@ public class DateArithmetic {
         return a;
     }
 
-    public final String[] toSortDate(String a[]) {
+    public final String[] toSortDates(String a[]) {
         int[] c = new int[a.length];
         for (int i = 0; i < a.length; i++) {
             c[i] = toUnivno(getDateDDMMYYYY(a[i]));
@@ -473,13 +473,13 @@ public class DateArithmetic {
         }
         String strDate = new String();
         if (a[0] % 10 == 1) {
-            strDate = a[0] + "st " + month + " " + a[2];
+            strDate = a[2] + " " + month + " " + a[0] + "st";
         } else if (a[0] % 10 == 2) {
-            strDate = a[0] + "nd " + month + " " + a[2];
+            strDate = a[2] + " " + month + " " + a[0] + "nd";
         } else if (a[0] % 10 == 3) {
-            strDate = a[0] + "rd " + month + " " + a[2];
+            strDate = a[2] + " " + month + " " + a[0] + "rd";
         } else {
-            strDate = a[0] + "th " + month + " " + a[2];
+            strDate = a[2] + " " + month + " " + a[1] + "th";
         }
         return strDate;
     }

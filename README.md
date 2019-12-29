@@ -96,7 +96,7 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
 
 # toSortDate Method
 
-  It is supported only with DDMMYYYY Formats.
+  * It is supported only with DDMMYYYY Formats.
   * It is used to get the Dates Sorted in Ascending Order.
   * *toSortDate()* Method takes *String Array Value* as arguments to get dates.
   * Each date is converted to *Integer Array* using *getDateDDMMYYYY()* Method for Converting it into Universal Number using *toUnivno()* and stored in *Integer Array Variable*
@@ -104,3 +104,5 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
 
 
 # toUnivno Method
+
+  *toUnivno()* Method is used for finding Day, finding difference between two Dates, sorting multiple Dates, to check valid date from an Array so it is also known as Universal Number. This number represents the total number of Days from 01/01/0000 to the given *Integer Array Value* given by *getDateDDMMYYYY()*.

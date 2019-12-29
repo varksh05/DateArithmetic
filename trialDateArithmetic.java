@@ -3,7 +3,6 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.Arrays;
 
-
 class Date {
 
     public static void main(String[] args) {
@@ -53,9 +52,34 @@ class Date {
         System.out.println("MMDDYY20 " + a.putDateCodeMMDDYY20(a.getDateDDMMYYYY("01/02/2010")));
         System.out.println("MMDDYY19 " + a.putDateCodeMMDDYY19(a.getDateDDMMYYYY("01/02/2010")));
 
+        System.out.println("\ngetDate with Mon/Months Methods\n");
+        System.out.println("DDMonYYYY " + a.putDateDDMonYYYY(a.getDateDDMMYYYY("01/02/2010")));
+        System.out.println("MonDDYYYY " + a.putDateMonDDYYYY(a.getDateDDMMYYYY("01/02/2010")));
+        System.out.println("YYYYMonDD " + a.putDateYYYYMonDD(a.getDateDDMMYYYY("01/02/2010")));
+        System.out.println("DDMonthYYYY " + a.putDateDDMonthYYYY(a.getDateDDMMYYYY("01/02/2010")));
+        System.out.println("YYYYMonthDD " + a.putDateYYYYMonthDD(a.getDateDDMMYYYY("01/02/2010")));
 
-        //putDate String month
-        System.out.println("\nputDateCode Methods\n");
+        //toUnivno
+        System.out.println("\ntoUniv() " + a.toUnivno(a.getDateDDMMYYYY("01/02/2010")));
 
+        //toDay
+        System.out.println("\ntoDate() " + a.toDay(a.toUnivno(a.getDateDDMMYYYY("01/02/2010"))));
+
+        //toDate
+        System.out.println("\ntoDate() DDMMYYYY " + Arrays.toString(a.toDate(a.toUnivno(a.getDateDDMMYYYY("01/02/2010")))));
+
+        //toCheck
+        System.out.println("\ntoCheckValidDate() from Univarsal Number " + a.toCheckValidDate(a.toUnivno(a.getDateDDMMYYYY("01/02/2010"))));
+        System.out.println("toCheckValidDate() from Date " + a.toCheckValidDate(a.getDateDDMMYYYY("01/02/2010")));
+
+        //daysBetweenDates
+        System.out.println("\ndaysBetweenDates() from two Univarsal Number " + a.daysBetweenDates(a.toUnivno(a.getDateDDMMYYYY("01/02/2010")), a.toUnivno(a.getDateDDMMYYYY("01/03/2010"))));
+        System.out.println("daysBetweenDates() from Date " + a.daysBetweenDates(a.getDateDDMMYYYY("01/02/2010"), a.getDateDDMMYYYY("01/03/2010")));
+
+        //toSortDates
+        String[] unSortDates = { "12/10/2011", "13/11/2015", "02/05/2009", "09/08/2019", "19/04/1971", "26/12/2012" };
+        System.out.println("\nunSortDates " + Arrays.toString(unSortDates));
+        System.out.println("toSortDays() ");
+        System.out.println("sortDays() "+ Arrays.toString(a.toSortDates(unSortDates)));
     }
 }
