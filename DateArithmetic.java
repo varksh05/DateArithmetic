@@ -4,52 +4,93 @@ import java.util.Scanner;
 
 public class DateArithmetic {
 
+    private static final int[] getDateSplit(String codeDate){
+
+      int dateCode = Integer.parseInt(codeDate);
+      int[] a = new int[3];
+      a[2] = dateCode % 10000;
+      a[1] = (dateCode / 10000) % 100;
+      a[0] = (dateCode / 1000000) % 100;
+      return a;
+    }
+
+    private static final int[] getDateSplit20(String codeDate){
+
+      int dateCode = Integer.parseInt(codeDate);
+      int[] a = new int[3];
+      a[2] = dateCode % 100;
+      a[1] = (dateCode / 100) % 100;
+      a[0] = (dateCode / 10000) % 100;
+      a[2] += 2000;
+      return a;
+    }
+
+    private static final int[] getDateSplit19(String codeDate){
+
+      int dateCode = Integer.parseInt(codeDate);
+      int[] a = new int[3];
+      a[2] = dateCode % 100;
+      a[1] = (dateCode / 100) % 100;
+      a[0] = (dateCode / 10000) % 100;
+      a[2] += 1900;
+      return a;
+    }
+
     public final int[] getDateDDMMYYYY(String strDate) {
         String[] DateStr = strDate.split("/", 3);
         String codeDate = DateStr[0] + DateStr[1] + DateStr[2];
-        int dateCode = Integer.parseInt(codeDate);
-        int[] a = new int[3];
-        a[2] = dateCode % 10000;
-        a[1] = (dateCode / 10000) % 100;
-        a[0] = (dateCode / 1000000) % 100;
+        int[] a = getDateSplit(codeDate);
         return a;
     }
 
     public final int[] getDateMMDDYYYY(String strDate) {
         String[] DateStr = strDate.split("/", 3);
-        String codeDate = DateStr[0] + DateStr[1] + DateStr[2];
-        int dateCode = Integer.parseInt(codeDate);
-        int[] a = new int[3];
-        a[2] = dateCode % 10000;
-        a[1] = (dateCode / 10000) % 100;
-        a[0] = (dateCode / 1000000) % 100;
-        int temp = a[1];
-        a[1] = a[0];
-        a[0] = temp;
+        String codeDate = DateStr[1] + DateStr[0] + DateStr[2];
+        int[] a = getDateSplit(codeDate);
         return a;
     }
+
+    public final int[] getDateYYYYDDMM(String strDate) {
+        String[] DateStr = strDate.split("/", 3);
+        String codeDate = DateStr[1] + DateStr[2] + DateStr[0];
+        int[] a = getDateSplit(codeDate);
+        return a;
+    }
+
+    public final int[] getDateYYYYMMDD(String strDate) {
+        String[] DateStr = strDate.split("/", 3);
+        String codeDate = DateStr[2] + DateStr[1] + DateStr[0];
+        int[] a = getDateSplit(codeDate);
+        return a;
+    }
+
+
 
     public final int[] getDateDDMMYY19(String strDate) {
         String[] DateStr = strDate.split("/", 3);
         String codeDate = DateStr[0] + DateStr[1] + DateStr[2];
-        int dateCode = Integer.parseInt(codeDate);
-        int[] a = new int[3];
-        a[2] = dateCode % 10000;
-        a[1] = (dateCode / 10000) % 100;
-        a[0] = (dateCode / 1000000) % 100;
-        a[2] += 1900;
+        int[] a = getDateSplit19(codeDate);
         return a;
     }
 
     public final int[] getDateDDMMYY20(String strDate) {
         String[] DateStr = strDate.split("/", 3);
         String codeDate = DateStr[0] + DateStr[1] + DateStr[2];
-        int dateCode = Integer.parseInt(codeDate);
-        int[] a = new int[3];
-        a[2] = dateCode % 10000;
-        a[1] = (dateCode / 10000) % 100;
-        a[0] = (dateCode / 1000000) % 100;
-        a[2] += 2000;
+        int[] a = getDateSplit20(codeDate);
+        return a;
+    }
+
+    public final int[] getDateMMDDYY19(String strDate) {
+        String[] DateStr = strDate.split("/", 3);
+        String codeDate = DateStr[1] + DateStr[0] + DateStr[2];
+        int[] a = getDateSplit19(codeDate);
+        return a;
+    }
+
+    public final int[] getDateMMDDYY20(String strDate) {
+        String[] DateStr = strDate.split("/", 3);
+        String codeDate = DateStr[1] + DateStr[0] + DateStr[2];
+        int[] a = getDateSplit20(codeDate);
         return a;
     }
 
@@ -72,6 +113,16 @@ public class DateArithmetic {
 
     public final String putDateMMDDYYYY(int a[]) {
         String strDate = String.format("%02d", a[1]) + "/" + String.format("%02d", a[0]) + "/" + String.format("%04d", a[2]);
+        return strDate;
+    }
+
+    public final String putDateYYYYMMDD(int a[]) {
+        String strDate = String.format("%04d", a[2]) + "/" + String.format("%02d", a[1]) + "/" + String.format("%02d", a[0]);
+        return strDate;
+    }
+
+    public final String putDateYYYYDDMM(int a[]) {
+        String strDate = String.format("%04d", a[2]) + "/" + String.format("%02d", a[0]) + "/" + String.format("%02d", a[1]);
         return strDate;
     }
 
@@ -102,6 +153,16 @@ public class DateArithmetic {
 
     public final String putDateCodeDDMMYYYY(int a[]) {
         String strDate = String.format("%02d", a[0]) + String.format("%02d", a[1]) + String.format("%04d", a[2]);
+        return strDate;
+    }
+
+    public final String putDateCodeYYYYDDMM(int a[]) {
+        String strDate = String.format("%04d", a[2]) + String.format("%02d", a[0]) + String.format("%02d", a[1]);
+        return strDate;
+    }
+
+    public final String putDateCodeYYYYMMDD(int a[]) {
+        String strDate = String.format("%04d", a[2]) + String.format("%02d", a[1]) + String.format("%02d", a[0]);
         return strDate;
     }
 
@@ -257,7 +318,7 @@ public class DateArithmetic {
         return strDate;
     }
 
-    public final String putDateDDMonnthYYYY(int a[]) {
+    public final String putDateDDMonthYYYY(int a[]) {
         String month = new String();
         switch (a[1]) {
             case 1:
@@ -364,10 +425,7 @@ public class DateArithmetic {
         return strDate;
     }
 
-    public final String putDateYYYYMMDD(int a[]) {
-        String strDate = a[2] + "/" + a[1] + "/" + a[0];
-        return strDate;
-    }
+
 
     public final int toUnivno(int a[]) {
         int d = 0;
