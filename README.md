@@ -45,11 +45,11 @@ Date = February 1 2010
   You can get Dates from various Formats. getDate Methods take a String Value as arguments. getDate Methods returns in Arrays Integer.
 
 
-  * int[] getDateDDMMYYYY(String strDate) - 01/02/2010
-  * int[] getDateMMDDYYYY(String strDate) - 02/01/2010  
-  * int[] getDateYYYYDDMM(String strDate) - 2010/01/02
-  * int[] getDateYYYYMMDD(String strDate) - 2010/02/01
-  * int[] getDateMMDDYY19(String strDate) - 10/02/01 (it works only if the a[3](year) is between 1900 - 1999)
+    int[] getDateDDMMYYYY(String strDate)  01/02/2010
+    int[] getDateMMDDYYYY(String strDate)  02/01/2010  
+    int[] getDateYYYYDDMM(String strDate)  2010/01/02
+    int[] getDateYYYYMMDD(String strDate)  2010/02/01
+    int[] getDateMMDDYY19(String strDate)  10/02/01 (it works only if the a[3](year) is between 1900 - 1999)
   * int[] getDateMMDDYY20(String strDate) - 10/02/01 (it works only if the a[3](year) is between 2000 - 2099)
   * int[] getDateDDMMYY19(String strDate) - 02/01/10 (it works only if the a[3](year) is between 1900 - 1999)
   * int[] getDateDDMMYY20(String strDate) - 02/01/10 (it works only if the a[3](year) is between 2000 - 2099)
