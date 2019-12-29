@@ -19,7 +19,7 @@ DateArithmetic Class
 
      getDate -> toUnivno (returns integer d).
      Add or Subtract a number to d and store it in newDate
-      newDate = d + *anynumber*
+      newDate = d + anynumber;
      toDate(newDate) -> putDate
 
 # To get Difference between two Dates
