@@ -40,7 +40,7 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
 
 
 # getDate Methods
-  You can get Dates from various Formats. getDate Methods take a <String> Value as arguments. getDate Methods returns in Arrays Integer.
+  You can get Dates from various Formats. getDate Methods take a *String Value* as arguments. getDate Methods returns in *Arrays Integer*.
 
 
     int[] getDateDDMMYYYY(String strDate)  01/02/2010
@@ -67,7 +67,7 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
    * *a[2] - Year  //2010*
 
 # putDate Methods
-  You can print Dates from various Formats using putDate Methods. putDate Methods take a *<Integer Array>* Value as arguments. putDate Methods returns in String Value.
+  You can print Dates from various Formats using putDate Methods. putDate Methods take a *Integer Array* Value as arguments. putDate Methods returns in *String Value*.
 
     String putDateDDMMYYYY(int a[]) - 01/02/2010
     String putDateMMDDYYYY(int a[]) - 02/01/2010
