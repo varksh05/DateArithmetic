@@ -1,6 +1,5 @@
 DateArithmetic Class
-
-* This DateArithmetic Class is Designed to work All the Date Calculations After Christ(AC).
+This DateArithmetic Class is Designed to work All the Date Calculations After Christ(AC). *February 1st 2010* is used as the Common date below for Example purposes
 
 # To Change the Date format
 
@@ -39,7 +38,6 @@ DateArithmetic Class
      get Multiples Value in String Arrays
      sortDate(String a[])
 
-Date = February 1 2010
 
 # getDate Methods
   You can get Dates from various Formats. getDate Methods take a String Value as arguments. getDate Methods returns in Arrays Integer.
