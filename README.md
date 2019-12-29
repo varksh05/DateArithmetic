@@ -3,22 +3,27 @@ DateArithmetic Class
 * This DateArithmetic Class is Designed to work All the Date Calculations After Christ(AC).
 
 #To Change the Date format
+
     * getDate -> putDate
 
 #To Check a Valid Date
-        * getDate -> toCheckValidDate
-        * getDate -> toUnivno -> toCheckValidDate
+
+    * getDate -> toCheckValidDate
+    * getDate -> toUnivno -> toCheckValidDate
 
 #To Find Day of the Day
+
     * getDate -> toUnivno -> toDay
 
 #To Add or Subtract a date to arrive at new date
+
     * getDate -> toUnivno (returns integer d).
     * Add or Subtract a number to d and store it in newDate
       newDate = d + *anynumber*
     * toDate(newDate) -> putDate
 
 #To get Difference between two Dates
+
     * d1 = getDate
     * d2 = getDate
     * daysBetweenDates(d1,d2)
@@ -30,6 +35,7 @@ DateArithmetic Class
     * daysBetweenDates(d1,d2)
 
 #To get Dates and Sort Dates
+
     * get Multiples Value in String Arrays
     * sortDate(String a[])
 
