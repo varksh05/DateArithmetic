@@ -2,27 +2,27 @@ DateArithmetic Class
 
 * This DateArithmetic Class is Designed to work All the Date Calculations After Christ(AC).
 
-#To Change the Date format
+# To Change the Date format
 
     * getDate -> putDate
 
-#To Check a Valid Date
+# To Check a Valid Date
 
     * getDate -> toCheckValidDate
     * getDate -> toUnivno -> toCheckValidDate
 
-#To Find Day of the Day
+# To Find Day of the Day
 
     * getDate -> toUnivno -> toDay
 
-#To Add or Subtract a date to arrive at new date
+# To Add or Subtract a date to arrive at new date
 
     * getDate -> toUnivno (returns integer d).
     * Add or Subtract a number to d and store it in newDate
       newDate = d + *anynumber*
     * toDate(newDate) -> putDate
 
-#To get Difference between two Dates
+# To get Difference between two Dates
 
     * d1 = getDate
     * d2 = getDate
@@ -34,14 +34,14 @@ DateArithmetic Class
     * d2 = getDate -> toUnivno
     * daysBetweenDates(d1,d2)
 
-#To get Dates and Sort Dates
+# To get Dates and Sort Dates
 
     * get Multiples Value in String Arrays
     * sortDate(String a[])
 
 Date = February 1 2010
 
-#getDate Methods
+# getDate Methods
   You can get Dates from various Formats. getDate Methods take a String Value as arguments. getDate Methods returns in Arrays Integer.
 
 
@@ -59,7 +59,7 @@ Date = February 1 2010
    * *a[1] - Month // 02*
    * *a[2] - Year  //2010*
 
-#putDate Methods
+# putDate Methods
 
   * putDateDDMMYYYY(int a[]) - 01/02/2010
   * putDateMMDDYYYY(int a[]) - 02/01/2010
