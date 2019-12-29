@@ -17,8 +17,8 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
 # To Add or Subtract a date to arrive at new date
 
      getDate -> toUnivno (returns integer d).
-     Add or Subtract a number to d and store it in newDate
-      newDate = d + anynumber;
+     Add/Subtract a number to/from d. positve for addition or negative for Subtraction
+     newDate = d + anynumber;
      toDate(newDate) -> putDate
 
 # To get Difference between two Dates
