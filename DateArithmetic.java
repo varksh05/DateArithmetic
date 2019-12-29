@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class DateArithmetic {
 
-    private static final int[] getDateSplit(String codeDate){
+    private final int[] getDateSplit(String codeDate){
 
       int dateCode = Integer.parseInt(codeDate);
       int[] a = new int[3];
@@ -14,25 +14,24 @@ public class DateArithmetic {
       return a;
     }
 
-    private static final int[] getDateSplit20(String codeDate){
+    private final int[] getDateSplit20(String codeDate){
 
       int dateCode = Integer.parseInt(codeDate);
       int[] a = new int[3];
-      a[2] = dateCode % 100;
+      a[2] = dateCode % 100 + 2000;
       a[1] = (dateCode / 100) % 100;
       a[0] = (dateCode / 10000) % 100;
-      a[2] += 2000;
+
       return a;
     }
 
-    private static final int[] getDateSplit19(String codeDate){
+    private final int[] getDateSplit19(String codeDate){
 
       int dateCode = Integer.parseInt(codeDate);
       int[] a = new int[3];
-      a[2] = dateCode % 100;
+      a[2] = dateCode % 100 + 1900;
       a[1] = (dateCode / 100) % 100;
       a[0] = (dateCode / 10000) % 100;
-      a[2] += 1900;
       return a;
     }
 
@@ -91,6 +90,66 @@ public class DateArithmetic {
         String[] DateStr = strDate.split("/", 3);
         String codeDate = DateStr[1] + DateStr[0] + DateStr[2];
         int[] a = getDateSplit20(codeDate);
+        return a;
+    }
+
+    public final int[] getDateCodeDDMMYYYY(String strDate) {
+        int[] a = getDateSplit(strDate);
+        return a;
+    }
+
+    public final int[] getDateCodeMMDDYYYY(String strDate) {
+        int dateCode = Integer.parseInt(strDate);
+        int[] a = new int[3];
+        a[2] = dateCode % 10000;
+        a[0] = (dateCode / 10000) % 100;
+        a[1] = (dateCode / 1000000) % 100;
+        return a;
+    }
+
+    public final int[] getDateCodeYYYYDDMM(String strDate) {
+        int dateCode = Integer.parseInt(strDate);
+        int[] a = new int[3];
+        a[2] = dateCode / 10000;
+        a[0] = (dateCode % 10000) / 100;
+        a[1] = dateCode % (dateCode / 1000000);
+        return a;
+    }
+
+    public final int[] getDateCodeYYYYMMDD(String strDate) {
+       int dateCode = Integer.parseInt(strDate);
+        int[] a = new int[3];
+        a[2] = dateCode / 10000;
+        a[1] = (dateCode % 10000) / 100;
+        a[0] = dateCode % (dateCode / 1000000);
+        return a;
+    }
+
+    public final int[] getDateCodeDDMMYY19(String strDate) {
+        int[] a = getDateSplit19(strDate);
+        return a;
+    }
+
+    public final int[] getDateCodeDDMMYY20(String strDate) {
+        int[] a = getDateSplit20(strDate);
+        return a;
+    }
+
+    public final int[] getDateCodeMMDDYY19(String strDate) {
+        int dateCode = Integer.parseInt(strDate);
+        int[] a = new int[3];
+        a[2] = dateCode % 100 + 1900;
+        a[0] = (dateCode / 100) % 100;
+        a[1] = (dateCode / 10000) % 100;
+        return a;
+    }
+
+    public final int[] getDateCodeMMDDYY20(String strDate) {
+        int dateCode = Integer.parseInt(strDate);
+        int[] a = new int[3];
+        a[2] = dateCode % 100 + 2000;
+        a[0] = (dateCode / 100) % 100;
+        a[1] = (dateCode / 10000) % 100;
         return a;
     }
 
