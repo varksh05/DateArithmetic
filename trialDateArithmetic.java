@@ -53,5 +53,9 @@ class Date {
         System.out.println("MMDDYY20 " + a.putDateCodeMMDDYY20(a.getDateDDMMYYYY("01/02/2010")));
         System.out.println("MMDDYY19 " + a.putDateCodeMMDDYY19(a.getDateDDMMYYYY("01/02/2010")));
 
+
+        //putDate String month
+        System.out.println("\nputDateCode Methods\n");
+
     }
 }

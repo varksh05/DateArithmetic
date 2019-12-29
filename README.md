@@ -1,5 +1,5 @@
 DateArithmetic Class
-This DateArithmetic Class is Designed to work All the Date Calculations After Christ(AC). *February 1st 2010* is used as the Common date below for Example purposes
+This DateArithmetic Class is Designed to work All the Date Calculations After Christ(AC). *February 1st 2010* is used as the Common date below for Example purposes. Here DD/MM/YYYY is used as Default Date Format.
 
 # To Change the Date format
 
@@ -39,8 +39,10 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
      sortDate(String a[])
 
 
+
+
 # getDate Methods
-  You can get Dates from various Formats. getDate Methods take a *String Value* as arguments. getDate Methods returns in *Integer Array Values*.
+  You can get Dates from various Formats. getDate Methods takes *String Value* as arguments. getDate Methods returns in *Integer Array Values*.
 
 
     int[] getDateDDMMYYYY(String strDate)  01/02/2010
@@ -66,7 +68,7 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
    * *a[2] - Year  //2010*
 
 # putDate Methods
-  You can print Dates from various Formats using putDate Methods. putDate Methods take a *Integer Array Value* as arguments. putDate Methods returns in *String Value*.
+  You can print Dates from various Formats using putDate Methods. putDate Methods takes *Integer Array Value* as arguments. putDate Methods returns in *String Value*.
 
     String putDateDDMMYYYY(int a[]) - 01/02/2010
     String putDateMMDDYYYY(int a[]) - 02/01/2010
@@ -91,3 +93,13 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
     String putDateYYYYMonDD(int a[]) - 2010 Feb 1
     String putDateDDMonthYYYY(int a[]) - 1st February 2010
     String putDateYYYYMonthDD(int a[]) - 2010 February 1st
+
+# toSortDate Method
+    * It is supported only with DD/MM/YYYY Formats
+    * It is used to get the Dates Sorted in Ascending Order.
+    * *toSortDate()* Method takes *String Array Value* as arguments to get dates.
+    * Each date is converted to *Integer Array* using *getDateDDMMYYYY()* Method for Converting it into Universal Number using *toUnivno()* and stored in *Integer Array Variable*
+    * It sorts the date and each date is converted back into *Integer Array Value* using *toDate()* Method and using *getDateDDMMYYYY()* Method for Converting it back into *String Array Value* by using *putDateDDMMYYYY()* Method
+
+
+# toUnivno Method

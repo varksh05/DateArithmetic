@@ -153,7 +153,7 @@ public class DateArithmetic {
         return a;
     }
 
-    public final String[] sortDate(String a[]) {
+    public final String[] toSortDate(String a[]) {
         int[] c = new int[a.length];
         for (int i = 0; i < a.length; i++) {
             c[i] = toUnivno(getDateDDMMYYYY(a[i]));
