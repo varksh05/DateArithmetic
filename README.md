@@ -105,4 +105,5 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
 
 # toUnivno Method
 
-  *toUnivno()* Method is used for finding Day, finding difference between two Dates, sorting multiple Dates, to check valid date from an Array so it is also known as Universal Number. This number represents the total number of Days from 01/01/0000 to the given *Integer Array Value* given by *getDateDDMMYYYY()*.
+  * *toUnivno()* Method is used for finding Day, finding difference between two Dates, sorting multiple Dates, to check valid date from an Array so it is also known as Universal Number.
+  * This number represents the total number of Days from 01/01/0000 to the given *Integer Array Value* given by *getDateDDMMYYYY()*.
