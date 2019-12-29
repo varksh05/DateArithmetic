@@ -96,11 +96,11 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
 
 # toSortDate Method
 
-    It is supported only with DDMMYYYY Formats.
-    * It is used to get the Dates Sorted in Ascending Order.
-    * *toSortDate()* Method takes *String Array Value* as arguments to get dates.
-    * Each date is converted to *Integer Array* using *getDateDDMMYYYY()* Method for Converting it into Universal Number using *toUnivno()* and stored in *Integer Array Variable*
-    * It sorts the date and each date is converted back into *Integer Array Value* using *toDate()* Method and using *getDateDDMMYYYY()* Method for Converting it back into *String Array Value* by using *putDateDDMMYYYY()* Method
+  It is supported only with DDMMYYYY Formats.
+  * It is used to get the Dates Sorted in Ascending Order.
+  * *toSortDate()* Method takes *String Array Value* as arguments to get dates.
+  * Each date is converted to *Integer Array* using *getDateDDMMYYYY()* Method for Converting it into Universal Number using *toUnivno()* and stored in *Integer Array Variable*
+  * It sorts the date and each date is converted back into *Integer Array Value* using *toDate()* Method and using *getDateDDMMYYYY()* Method for Converting it back into *String Array Value* by using *putDateDDMMYYYY()* Method
 
 
 # toUnivno Method
