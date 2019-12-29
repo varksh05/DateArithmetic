@@ -58,7 +58,7 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
    * *a[2] - Year  //2010*
 
 # putDate Methods
-
+putMethod prints Dates in various Different Formats
     putDateDDMMYYYY(int a[]) - 01/02/2010
     putDateMMDDYYYY(int a[]) - 02/01/2010
     putDateYYYYMMDD(int a[]) - 2010/02/01
