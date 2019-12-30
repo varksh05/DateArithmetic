@@ -66,7 +66,8 @@ class Date {
         System.out.println("\ntoDate() " + a.toDay(a.toUnivno(a.getDateDDMMYYYY("01/02/2010"))));
 
         //toDate
-        System.out.println("\ntoDate() DDMMYYYY " + Arrays.toString(a.toDate(a.toUnivno(a.getDateDDMMYYYY("01/02/2010")))));
+        System.out.println("\nAdded 100 days to 01/02/2010");
+        System.out.println("\ntoDate() " + Arrays.toString(a.toDate(a.toUnivno(a.getDateDDMMYYYY("01/02/2010"))+100)));
 
         //toCheck
         System.out.println("\ntoCheckValidDate() from Univarsal Number " + a.toCheckValidDate(a.toUnivno(a.getDateDDMMYYYY("01/02/2010"))));
