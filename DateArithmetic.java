@@ -653,7 +653,7 @@ public class DateArithmetic {
         String d = new String();
         switch (a % 7) {
             case 1:
-                d = "Sunday";
+                d = "Sunday ";
                 break;
             case 2:
                 d = "Monday";
