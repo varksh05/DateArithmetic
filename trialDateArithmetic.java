@@ -32,6 +32,7 @@ class Date {
         System.out.println("MMDDYY19 " + Arrays.toString(a.getDateCodeMMDDYY19("020110")));
 
 //      getDateMonth Method
+        System.out.println("\ngetDate with Mon/Months Methods\n");
         System.out.println("DD Mon YYYY " + Arrays.toString(a.getDateDDMonYYYY("01 Feb 2010")));
         System.out.println("Mon DD YYYY " + Arrays.toString(a.getDateMonDDYYYY("Feb 01 2010")));
         System.out.println("YYYY Mon DD " + Arrays.toString(a.getDateYYYYMonDD("2010 Feb 01")));
@@ -61,7 +62,7 @@ class Date {
         System.out.println("MMDDYY19 " + a.putDateCodeMMDDYY19(a.getDateDDMMYYYY("01/02/2010")));
 
 //      putDateMonth Method
-        System.out.println("\ngetDate with Mon/Months Methods\n");
+        System.out.println("\nputDate with Mon/Months Methods\n");
         System.out.println("DD Mon YYYY " + a.putDateDDMonYYYY(a.getDateDDMMYYYY("01/02/2010")));
         System.out.println("Mon DD YYYY " + a.putDateMonDDYYYY(a.getDateDDMMYYYY("01/02/2010")));
         System.out.println("YYYY Mon DD " + a.putDateYYYYMonDD(a.getDateDDMMYYYY("01/02/2010")));
