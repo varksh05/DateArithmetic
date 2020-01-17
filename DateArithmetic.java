@@ -319,6 +319,10 @@ public class DateArithmetic {
     public final int[] getDateDDMonthYYYY(String strDate) {
         int[] a = new int[3];
         String[] dateStr = strDate.split(" ");
+        dateStr[0] = dateStr[0].replaceFirst("st", "");
+        dateStr[0] = dateStr[0].replaceFirst("nd", "");
+        dateStr[0] = dateStr[0].replaceFirst("rd", "");
+        dateStr[0] = dateStr[0].replaceFirst("th", "");
         a[0] = Integer.parseInt(dateStr[0]);
         a[2] = Integer.parseInt(dateStr[2]);
         switch (dateStr[1]) {
@@ -365,6 +369,10 @@ public class DateArithmetic {
     public final int[] getDateYYYYMonthDD(String strDate) {
         int[] a = new int[3];
         String[] dateStr = strDate.split(" ");
+        dateStr[2] = dateStr[2].replaceFirst("st", "");
+        dateStr[2] = dateStr[2].replaceFirst("nd", "");
+        dateStr[2] = dateStr[2].replaceFirst("rd", "");
+        dateStr[2] = dateStr[2].replaceFirst("th", "");
         a[0] = Integer.parseInt(dateStr[2]);
         a[2] = Integer.parseInt(dateStr[0]);
         switch (dateStr[1]) {
