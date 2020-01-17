@@ -4,104 +4,414 @@ import java.util.Scanner;
 
 public class DateArithmetic {
 
-    private static final int[] getDateSplit(String codeDate){
-
-      int dateCode = Integer.parseInt(codeDate);
-      int[] a = new int[3];
-      a[2] = dateCode % 10000;
-      a[1] = (dateCode / 10000) % 100;
-      a[0] = (dateCode / 1000000) % 100;
-      return a;
+    private final int[] getDateSplit(String codeDate) {
+        String[] DateStr = codeDate.split("/", 3);
+        int[] a = new int[3];
+        a[0] = Integer.parseInt(DateStr[0]);
+        a[1] = Integer.parseInt(DateStr[1]);
+        a[2] = Integer.parseInt(DateStr[2]);
+        return a;
     }
 
-    private static final int[] getDateSplit20(String codeDate){
-
-      int dateCode = Integer.parseInt(codeDate);
-      int[] a = new int[3];
-      a[2] = dateCode % 100;
-      a[1] = (dateCode / 100) % 100;
-      a[0] = (dateCode / 10000) % 100;
-      a[2] += 2000;
-      return a;
+    private final int[] getDateSplit19(String codeDate) {
+        String[] DateStr = codeDate.split("/", 3);
+        int[] a = new int[3];
+        a[0] = Integer.parseInt(DateStr[0]);
+        a[1] = Integer.parseInt(DateStr[1]);
+        a[2] = Integer.parseInt(DateStr[2]) + 1900;
+        return a;
     }
 
-    private static final int[] getDateSplit19(String codeDate){
+    private final int[] getDateSplit20(String codeDate) {
+        String[] DateStr = codeDate.split("/", 3);
+        int[] a = new int[3];
+        a[0] = Integer.parseInt(DateStr[0]);
+        a[1] = Integer.parseInt(DateStr[1]);
+        a[2] = Integer.parseInt(DateStr[2]) + 2000;
+        return a;
+    }
 
-      int dateCode = Integer.parseInt(codeDate);
-      int[] a = new int[3];
-      a[2] = dateCode % 100;
-      a[1] = (dateCode / 100) % 100;
-      a[0] = (dateCode / 10000) % 100;
-      a[2] += 1900;
-      return a;
+    private final int[] getDateSplitCode(String codeDate) {
+
+        int dateCode = Integer.parseInt(codeDate);
+        int[] a = new int[3];
+        a[2] = dateCode % 10000;
+        a[1] = (dateCode / 10000) % 100;
+        a[0] = (dateCode / 1000000) % 100;
+        return a;
+    }
+
+    private final int[] getDateSplit20Code(String codeDate) {
+
+        int dateCode = Integer.parseInt(codeDate);
+        int[] a = new int[3];
+        a[2] = dateCode % 100 + 2000;
+        a[1] = (dateCode / 100) % 100;
+        a[0] = (dateCode / 10000) % 100;
+
+        return a;
+    }
+
+    private final int[] getDateSplit19Code(String codeDate) {
+
+        int dateCode = Integer.parseInt(codeDate);
+        int[] a = new int[3];
+        a[2] = dateCode % 100 + 1900;
+        a[1] = (dateCode / 100) % 100;
+        a[0] = (dateCode / 10000) % 100;
+        return a;
     }
 
     public final int[] getDateDDMMYYYY(String strDate) {
         String[] DateStr = strDate.split("/", 3);
-        String codeDate = DateStr[0] + DateStr[1] + DateStr[2];
+        String codeDate = DateStr[0] + "/" + DateStr[1] + "/" + DateStr[2];
         int[] a = getDateSplit(codeDate);
         return a;
     }
 
     public final int[] getDateMMDDYYYY(String strDate) {
         String[] DateStr = strDate.split("/", 3);
-        String codeDate = DateStr[1] + DateStr[0] + DateStr[2];
+        String codeDate = DateStr[1] + "/" + DateStr[0] + "/" + DateStr[2];
         int[] a = getDateSplit(codeDate);
         return a;
     }
 
     public final int[] getDateYYYYDDMM(String strDate) {
         String[] DateStr = strDate.split("/", 3);
-        String codeDate = DateStr[1] + DateStr[2] + DateStr[0];
+        String codeDate = DateStr[1] + "/" + DateStr[2] + "/" + DateStr[0];
         int[] a = getDateSplit(codeDate);
         return a;
     }
 
     public final int[] getDateYYYYMMDD(String strDate) {
         String[] DateStr = strDate.split("/", 3);
-        String codeDate = DateStr[2] + DateStr[1] + DateStr[0];
+        String codeDate = DateStr[2] + "/" + DateStr[1] + "/" + DateStr[0];
         int[] a = getDateSplit(codeDate);
         return a;
     }
 
-
-
     public final int[] getDateDDMMYY19(String strDate) {
         String[] DateStr = strDate.split("/", 3);
-        String codeDate = DateStr[0] + DateStr[1] + DateStr[2];
+        String codeDate = DateStr[0] + "/" + DateStr[1] + "/" + DateStr[2];
         int[] a = getDateSplit19(codeDate);
         return a;
     }
 
     public final int[] getDateDDMMYY20(String strDate) {
         String[] DateStr = strDate.split("/", 3);
-        String codeDate = DateStr[0] + DateStr[1] + DateStr[2];
+        String codeDate = DateStr[0] + "/" + DateStr[1] + "/" + DateStr[2];
         int[] a = getDateSplit20(codeDate);
         return a;
     }
 
     public final int[] getDateMMDDYY19(String strDate) {
         String[] DateStr = strDate.split("/", 3);
-        String codeDate = DateStr[1] + DateStr[0] + DateStr[2];
+        String codeDate = DateStr[1] + "/" + DateStr[0] + "/" + DateStr[2];
         int[] a = getDateSplit19(codeDate);
         return a;
     }
 
     public final int[] getDateMMDDYY20(String strDate) {
         String[] DateStr = strDate.split("/", 3);
-        String codeDate = DateStr[1] + DateStr[0] + DateStr[2];
+        String codeDate = DateStr[1] + "/" + DateStr[0] + "/" + DateStr[2];
         int[] a = getDateSplit20(codeDate);
         return a;
     }
 
-    public final String[] sortDate(String a[]) {
-        int[] c = new int[a.length];
-        for (int i = 0; i < a.length; i++) {
-            c[i] = toUnivno(getDateDDMMYYYY(a[i]));
+    public final int[] getDateCodeDDMMYYYY(String strDate) {
+        int[] a = getDateSplitCode(strDate);
+        return a;
+    }
+
+    public final int[] getDateCodeMMDDYYYY(String strDate) {
+        int dateCode = Integer.parseInt(strDate);
+        int[] a = new int[3];
+        a[2] = dateCode % 10000;
+        a[1] = (dateCode / 1000000) % 100;
+        a[0] = (dateCode / 10000) % 100;
+        return a;
+    }
+
+    public final int[] getDateCodeYYYYDDMM(String strDate) {
+        int dateCode = Integer.parseInt(strDate);
+        int[] a = new int[3];
+        a[2] = dateCode / 10000;
+        a[1] = dateCode % (dateCode / 1000000);
+        a[0] = (dateCode % 10000) / 100;
+        return a;
+    }
+
+    public final int[] getDateCodeYYYYMMDD(String strDate) {
+        int dateCode = Integer.parseInt(strDate);
+        int[] a = new int[3];
+        a[2] = dateCode / 10000;
+        a[1] = (dateCode % 10000) / 100;
+        a[0] = dateCode % (dateCode / 1000000);
+        return a;
+    }
+
+    public final int[] getDateCodeDDMMYY19(String strDate) {
+        int[] a = getDateSplit19Code(strDate);
+        return a;
+    }
+
+    public final int[] getDateCodeDDMMYY20(String strDate) {
+        int[] a = getDateSplit20Code(strDate);
+        return a;
+    }
+
+    public final int[] getDateCodeMMDDYY19(String strDate) {
+        int dateCode = Integer.parseInt(strDate);
+        int[] a = new int[3];
+        a[2] = dateCode % 100 + 1900;
+        a[1] = (dateCode / 10000) % 100;
+        a[0] = (dateCode / 100) % 100;
+        return a;
+    }
+
+    public final int[] getDateCodeMMDDYY20(String strDate) {
+        int dateCode = Integer.parseInt(strDate);
+        int[] a = new int[3];
+        a[2] = dateCode % 100 + 2000;
+        a[1] = (dateCode / 10000) % 100;
+        a[0] = (dateCode / 100) % 100;
+        return a;
+    }
+
+    public final int[] getDateDDMonYYYY(String strDate) {
+        int[] a = new int[3];
+        String[] dateStr = strDate.split(" ");
+        a[0] = Integer.parseInt(dateStr[0]);
+        a[2] = Integer.parseInt(dateStr[2]);
+        switch (dateStr[1]) {
+            case "Jan":
+                a[1] = 1;
+                break;
+            case "Feb":
+                a[1] = 2;
+                break;
+            case "Mar":
+                a[1] = 3;
+                break;
+            case "Apr":
+                a[1] = 4;
+                break;
+            case "May":
+                a[1] = 5;
+                break;
+            case "Jun":
+                a[1] = 6;
+                break;
+            case "Jul":
+                a[1] = 7;
+                break;
+            case "Aug":
+                a[1] = 8;
+                break;
+            case "Sep":
+                a[1] = 9;
+                break;
+            case "Oct":
+                a[1] = 10;
+                break;
+            case "Nov":
+                a[1] = 11;
+                break;
+            case "Dec":
+                a[1] = 12;
+                break;
         }
-        Arrays.sort(c);
-        for (int i = 0; i < a.length; i++) {
-            a[i] = putDateDDMMYYYY(toDate(c[i]));
+        return a;
+    }
+
+    public final int[] getDateMonDDYYYY(String strDate) {
+        int[] a = new int[3];
+        String[] dateStr = strDate.split(" ");
+        a[0] = Integer.parseInt(dateStr[1]);
+        a[2] = Integer.parseInt(dateStr[2]);
+        switch (dateStr[0]) {
+            case "Jan":
+                a[1] = 1;
+                break;
+            case "Feb":
+                a[1] = 2;
+                break;
+            case "Mar":
+                a[1] = 3;
+                break;
+            case "Apr":
+                a[1] = 4;
+                break;
+            case "May":
+                a[1] = 5;
+                break;
+            case "Jun":
+                a[1] = 6;
+                break;
+            case "Jul":
+                a[1] = 7;
+                break;
+            case "Aug":
+                a[1] = 8;
+                break;
+            case "Sep":
+                a[1] = 9;
+                break;
+            case "Oct":
+                a[1] = 10;
+                break;
+            case "Nov":
+                a[1] = 11;
+                break;
+            case "Dec":
+                a[1] = 12;
+                break;
+        }
+        return a;
+    }
+
+    public final int[] getDateYYYYMonDD(String strDate) {
+        int[] a = new int[3];
+        String[] dateStr = strDate.split(" ");
+        a[0] = Integer.parseInt(dateStr[2]);
+        a[2] = Integer.parseInt(dateStr[0]);
+        switch (dateStr[1]) {
+            case "Jan":
+                a[1] = 1;
+                break;
+            case "Feb":
+                a[1] = 2;
+                break;
+            case "Mar":
+                a[1] = 3;
+                break;
+            case "Apr":
+                a[1] = 4;
+                break;
+            case "May":
+                a[1] = 5;
+                break;
+            case "Jun":
+                a[1] = 6;
+                break;
+            case "Jul":
+                a[1] = 7;
+                break;
+            case "Aug":
+                a[1] = 8;
+                break;
+            case "Sep":
+                a[1] = 9;
+                break;
+            case "Oct":
+                a[1] = 10;
+                break;
+            case "Nov":
+                a[1] = 11;
+                break;
+            case "Dec":
+                a[1] = 12;
+                break;
+        }
+        return a;
+    }
+
+    public final int[] getDateDDMonthYYYY(String strDate) {
+        int[] a = new int[3];
+        String[] dateStr = strDate.split(" ");
+        dateStr[0] = dateStr[0].replaceFirst("st", "");
+        dateStr[0] = dateStr[0].replaceFirst("nd", "");
+        dateStr[0] = dateStr[0].replaceFirst("rd", "");
+        dateStr[0] = dateStr[0].replaceFirst("th", "");
+        a[0] = Integer.parseInt(dateStr[0]);
+        a[2] = Integer.parseInt(dateStr[2]);
+        switch (dateStr[1]) {
+            case "January":
+                a[1] = 1;
+                break;
+            case "February":
+                a[1] = 2;
+                break;
+            case "March":
+                a[1] = 3;
+                break;
+            case "April":
+                a[1] = 4;
+                break;
+            case "May":
+                a[1] = 5;
+                break;
+            case "June":
+                a[1] = 6;
+                break;
+            case "July":
+                a[1] = 7;
+                break;
+            case "August":
+                a[1] = 8;
+                break;
+            case "September":
+                a[1] = 9;
+                break;
+            case "October":
+                a[1] = 10;
+                break;
+            case "November":
+                a[1] = 11;
+                break;
+            case "December":
+                a[1] = 12;
+                break;
+        }
+        return a;
+    }
+
+    public final int[] getDateYYYYMonthDD(String strDate) {
+        int[] a = new int[3];
+        String[] dateStr = strDate.split(" ");
+        dateStr[2] = dateStr[2].replaceFirst("st", "");
+        dateStr[2] = dateStr[2].replaceFirst("nd", "");
+        dateStr[2] = dateStr[2].replaceFirst("rd", "");
+        dateStr[2] = dateStr[2].replaceFirst("th", "");
+        a[0] = Integer.parseInt(dateStr[2]);
+        a[2] = Integer.parseInt(dateStr[0]);
+        switch (dateStr[1]) {
+            case "January":
+                a[1] = 1;
+                break;
+            case "February":
+                a[1] = 2;
+                break;
+            case "March":
+                a[1] = 3;
+                break;
+            case "April":
+                a[1] = 4;
+                break;
+            case "May":
+                a[1] = 5;
+                break;
+            case "June":
+                a[1] = 6;
+                break;
+            case "July":
+                a[1] = 7;
+                break;
+            case "August":
+                a[1] = 8;
+                break;
+            case "September":
+                a[1] = 9;
+                break;
+            case "October":
+                a[1] = 10;
+                break;
+            case "November":
+                a[1] = 11;
+                break;
+            case "December":
+                a[1] = 12;
+                break;
         }
         return a;
     }
@@ -359,6 +669,7 @@ public class DateArithmetic {
                 break;
         }
         String strDate = new String();
+
         if (a[0] % 10 == 1) {
             strDate = a[0] + "st " + month + " " + a[2];
         } else if (a[0] % 10 == 2) {
@@ -414,18 +725,16 @@ public class DateArithmetic {
         }
         String strDate = new String();
         if (a[0] % 10 == 1) {
-            strDate = a[0] + "st " + month + " " + a[2];
+            strDate = a[2] + " " + month + " " + a[0] + "st";
         } else if (a[0] % 10 == 2) {
-            strDate = a[0] + "nd " + month + " " + a[2];
+            strDate = a[2] + " " + month + " " + a[0] + "nd";
         } else if (a[0] % 10 == 3) {
-            strDate = a[0] + "rd " + month + " " + a[2];
+            strDate = a[2] + " " + month + " " + a[0] + "rd";
         } else {
-            strDate = a[0] + "th " + month + " " + a[2];
+            strDate = a[2] + " " + month + " " + a[1] + "th";
         }
         return strDate;
     }
-
-
 
     public final int toUnivno(int a[]) {
         int d = 0;
@@ -675,5 +984,17 @@ public class DateArithmetic {
                 break;
         }
         return d;
+    }
+
+    public final String[] toSortDates(String a[]) {
+        int[] c = new int[a.length];
+        for (int i = 0; i < a.length; i++) {
+            c[i] = toUnivno(getDateDDMMYYYY(a[i]));
+        }
+        Arrays.sort(c);
+        for (int i = 0; i < a.length; i++) {
+            a[i] = putDateDDMMYYYY(toDate(c[i]));
+        }
+        return a;
     }
 }
