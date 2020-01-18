@@ -585,14 +585,20 @@ public class DateArithmetic {
         return d > 0 ? true : false;
     }
 
-    public final int daysBetweenDates(int a, int b) {
+    public final int toGetDaysBetweenDates(int a, int b) {
         return a >= b ? a - b : b - a;
     }
 
-    public final int daysBetweenDates(int d1[], int d2[]) {
+    public final int toGetDaysBetweenDates(int d1[], int d2[]) {
         int a = toUnivno(d1);
         int b = toUnivno(d2);
-        return a >= b ? a - b : b - a;
+        return toGetDaysBetweenDates( a,  b);
+    }
+
+    public final int[] toFindDate(int d1[], int n) {
+        int a = toUnivno(d1);
+        int b = a + n;
+        return toDate(b);
     }
 
     public final int[] toDate(int d) {
