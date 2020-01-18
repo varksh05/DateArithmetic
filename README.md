@@ -14,35 +14,16 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
 
      getDate -> toUnivno -> toDay
 
-# To Add or Subtract a date to arrive at new date
-
-     getDate -> toUnivno (returns integer d).
-     Add/Subtract a number to/from d. positve for addition or negative for Subtraction
-     newDate = d + anynumber;
-     toDate(newDate) -> putDate
-
-# To get Difference between two Dates
-
-     d1 = getDate
-     d2 = getDate
-     daysBetweenDates(d1,d2)
-
-    (or)
-
-     d1 = getDate -> toUnivno
-     d2 = getDate -> toUnivno
-     daysBetweenDates(d1,d2)
+# To Find a new date
+     getDate, Integer -> toFindNewDate  -> putDate
 
 # To get Dates and Sort Dates
 
      get Multiples Value in String Arrays
      sortDate(String a[])
 
-
-
-
 # getDate Methods
-  You can get Dates from various Formats. getDate Methods takes *String Value* as arguments. getDate Methods returns in *Integer Array Values*.
+  You can get Dates from various Formats. getDate Methods takes *String Value* as arguments. getDate Methods returns in *Integer Array Values*.If Invalid Date is given it  returns a *array "b" with a value of {0, 0, 0}* .
 
 
     int[] getDateDDMMYYYY(String strDate)  01/02/2010
@@ -68,7 +49,7 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
    * *a[2] - Year  //2010*
 
 # putDate Methods
-  You can print Dates from various Formats using putDate Methods. putDate Methods takes *Integer Array Value* as arguments. putDate Methods returns in *String Value*.
+  You can print Dates from various Formats using putDate Methods. putDate Methods takes *Integer Array Value* as arguments. putDate Methods returns in *String Value*.If Invalid Date is given it  returns *"Invalid Date"* .
 
     String putDateDDMMYYYY(int a[]) - 01/02/2010
     String putDateMMDDYYYY(int a[]) - 02/01/2010
@@ -96,7 +77,7 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
 
 # toSortDate Method
 
-  * It is supported only with DDMMYYYY Formats.
+  * It is supported only with *DD/MM/YYYY* Formats.
   * It is used to get the Dates Sorted in Ascending Order.
   * *toSortDate()* Method takes *String Array Value* as arguments to get dates.
   * Each date is converted to *Integer Array* using *getDateDDMMYYYY()* Method for Converting it into Universal Number using *toUnivno()* and stored in *Integer Array Variable*
