@@ -79,7 +79,8 @@ class Date {
         System.out.println("\ntoFindNewDate() \t\t\t\t" +a.putDateDDMMYYYY(a.toFindNewDate(a.getDateDDMMYYYY("01/02/2010"),100)));
 
 //      toGetDaysBetweenDates
-        System.out.println("\ntoGetDaysBetweenDates() \t\t\t"+a.toGetDaysBetweenDates(a.getDateDDMMYYYY("01/02/2010"), a.getDateDDMMYYYY("12/05/2010")));
+        System.out.println("\ntoGetDaysBetweenDates() from Univarsal Number \t"+a.toGetDaysBetween2Dates(a.getDateDDMMYYYY("01/02/2010"), a.getDateDDMMYYYY("12/05/2010")));
+        System.out.println("toGetDaysBetweenDates() from Date \t\t"+a.toGetDaysBetween2Dates(a.toUnivno(a.getDateDDMMYYYY("01/02/2010")), a.toUnivno(a.getDateDDMMYYYY("12/05/2010"))));
 
 //      toCheck
         System.out.println("\ntoCheckValidDate() from Univarsal Number \t" + a.toCheckValidDate(a.toUnivno(a.getDateDDMMYYYY("01/02/2010"))));
