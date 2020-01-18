@@ -6,56 +6,56 @@ public class DateArithmetic {
     private String format;
     private final int[] getDateSplit(String codeDate) {
         String[] DateStr = codeDate.split("/", 3);
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         a[0] = Integer.parseInt(DateStr[0]);
         a[1] = Integer.parseInt(DateStr[1]);
         a[2] = Integer.parseInt(DateStr[2]);
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     private final int[] getDateSplit19(String codeDate) {
         String[] DateStr = codeDate.split("/", 3);
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         a[0] = Integer.parseInt(DateStr[0]);
         a[1] = Integer.parseInt(DateStr[1]);
         a[2] = Integer.parseInt(DateStr[2]) + 1900;
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     private final int[] getDateSplit20(String codeDate) {
         String[] DateStr = codeDate.split("/", 3);
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         a[0] = Integer.parseInt(DateStr[0]);
         a[1] = Integer.parseInt(DateStr[1]);
         a[2] = Integer.parseInt(DateStr[2]) + 2000;
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     private final int[] getDateSplitCode(String codeDate) {
         int dateCode = Integer.parseInt(codeDate);
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         a[2] = dateCode % 10000;
         a[1] = (dateCode / 10000) % 100;
         a[0] = (dateCode / 1000000) % 100;
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     private final int[] getDateSplit20Code(String codeDate) {
         int dateCode = Integer.parseInt(codeDate);
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         a[2] = dateCode % 100 + 2000;
         a[1] = (dateCode / 100) % 100;
         a[0] = (dateCode / 10000) % 100;
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     private final int[] getDateSplit19Code(String codeDate) {
         int dateCode = Integer.parseInt(codeDate);
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         a[2] = dateCode % 100 + 1900;
         a[1] = (dateCode / 100) % 100;
         a[0] = (dateCode / 10000) % 100;
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     private final int getMonth(String a){
@@ -123,7 +123,7 @@ public class DateArithmetic {
     }
 
     private final String putMonth(int a){
-        String b;
+        String b = null;
         switch (a) {
             case 1:
                 b = "January";      break;
@@ -211,285 +211,274 @@ public class DateArithmetic {
     public final int[] getDateDDMMYYYY(String strDate) {
         format = "DD/MM/YYYY";
         String[] DateStr = strDate.split("/", 3);
-        int[] a = getDateSplit(DateStr[0] + "/" + DateStr[1] + "/" + DateStr[2]);
-        return a;
+        return getDateSplit(DateStr[0] + "/" + DateStr[1] + "/" + DateStr[2]);
     }
 
     public final int[] getDateMMDDYYYY(String strDate) {
         format = "MM/DD/YYYY";
         String[] DateStr = strDate.split("/", 3);
-        int[] a = getDateSplit(DateStr[1] + "/" + DateStr[0] + "/" + DateStr[2]);
-        return a;
+        return getDateSplit(DateStr[1] + "/" + DateStr[0] + "/" + DateStr[2]);
     }
 
     public final int[] getDateYYYYDDMM(String strDate) {
         format = "YYYY/DD/MM";
         String[] DateStr = strDate.split("/", 3);
-        int[] a = getDateSplit(DateStr[1] + "/" + DateStr[2] + "/" + DateStr[0]);
-        return a;
+        return getDateSplit(DateStr[1] + "/" + DateStr[2] + "/" + DateStr[0]);
     }
 
     public final int[] getDateYYYYMMDD(String strDate) {
         format = "YYYY/MM/DD";
         String[] DateStr = strDate.split("/", 3);
-        int[] a = getDateSplit(DateStr[2] + "/" + DateStr[1] + "/" + DateStr[0]);
-        return a;
+        return getDateSplit(DateStr[2] + "/" + DateStr[1] + "/" + DateStr[0]);
     }
 
     public final int[] getDateDDMMYY19(String strDate) {
         format = "DD/MM/YY";
         String[] DateStr = strDate.split("/", 3);
-        int[] a = getDateSplit19(DateStr[0] + "/" + DateStr[1] + "/" + DateStr[2]);
-        return a;
+        return getDateSplit19(DateStr[0] + "/" + DateStr[1] + "/" + DateStr[2]);
     }
 
     public final int[] getDateDDMMYY20(String strDate) {
         format = "DD/MM/YY";
         String[] DateStr = strDate.split("/", 3);
-        int[] a = getDateSplit20(DateStr[0] + "/" + DateStr[1] + "/" + DateStr[2]);
-        return a;
+        return getDateSplit20(DateStr[0] + "/" + DateStr[1] + "/" + DateStr[2]);
     }
 
     public final int[] getDateMMDDYY19(String strDate) {
         format = "MM/DD/YY";
         String[] DateStr = strDate.split("/", 3);
-        int[] a = getDateSplit19(DateStr[1] + "/" + DateStr[0] + "/" + DateStr[2]);
-        return a;
+        return getDateSplit19(DateStr[1] + "/" + DateStr[0] + "/" + DateStr[2]);
     }
 
     public final int[] getDateMMDDYY20(String strDate) {
         format = "MM/DD/YY";
         String[] DateStr = strDate.split("/", 3);
-        int[] a = getDateSplit20(DateStr[1] + "/" + DateStr[0] + "/" + DateStr[2]);
-        return a;
+        return getDateSplit20(DateStr[1] + "/" + DateStr[0] + "/" + DateStr[2]);
     }
 
     public final int[] getDateCodeDDMMYYYY(String strDate) {
         format = "DDMMYYYY";
-        int[] a = getDateSplitCode(strDate);
-        return a;
+        return getDateSplitCode(strDate);
     }
 
     public final int[] getDateCodeMMDDYYYY(String strDate) {
         format = "MMDDYYYY";
         int dateCode = Integer.parseInt(strDate);
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         a[2] = dateCode % 10000;
         a[1] = (dateCode / 1000000) % 100;
         a[0] = (dateCode / 10000) % 100;
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     public final int[] getDateCodeYYYYDDMM(String strDate) {
         format = "YYYYDDMM";
         int dateCode = Integer.parseInt(strDate);
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         a[2] = dateCode / 10000;
         a[1] = dateCode % (dateCode / 1000000);
         a[0] = (dateCode % 10000) / 100;
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     public final int[] getDateCodeYYYYMMDD(String strDate) {
         format = "YYYYMMDD";
         int dateCode = Integer.parseInt(strDate);
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         a[2] = dateCode / 10000;
         a[1] = (dateCode % 10000) / 100;
         a[0] = dateCode % (dateCode / 1000000);
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     public final int[] getDateCodeDDMMYY19(String strDate) {
         format = "DDMMYY";
-        int[] a = getDateSplit19Code(strDate);
-        return a;
+        return getDateSplit19Code(strDate);
     }
 
     public final int[] getDateCodeDDMMYY20(String strDate) {
         format = "DDMMYY";
-        int[] a = getDateSplit20Code(strDate);
-        return a;
+        return getDateSplit20Code(strDate);
     }
 
     public final int[] getDateCodeMMDDYY19(String strDate) {
         format = "MMDDYY";
         int dateCode = Integer.parseInt(strDate);
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         a[2] = dateCode % 100 + 1900;
         a[1] = (dateCode / 10000) % 100;
         a[0] = (dateCode / 100) % 100;
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     public final int[] getDateCodeMMDDYY20(String strDate) {
         format = "MMDDYY";
         int dateCode = Integer.parseInt(strDate);
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         a[2] = dateCode % 100 + 2000;
         a[1] = (dateCode / 10000) % 100;
         a[0] = (dateCode / 100) % 100;
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     public final int[] getDateDDMonYYYY(String strDate) {
         format = "DD Mon YYYY";
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         String[] dateStr = strDate.split(" ");
         dateStr[1] = getReplaceDay(dateStr[1]);
         a[0] = Integer.parseInt(dateStr[0]);
         a[1] = getMon(dateStr[1]);
         a[2] = Integer.parseInt(dateStr[2]);
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     public final int[] getDateMonDDYYYY(String strDate) {
         format = "Mon DD YYYY";
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         String[] dateStr = strDate.split(" ");
         dateStr[1] = getReplaceDay(dateStr[1]);
         a[0] = Integer.parseInt(dateStr[1]);
         a[1] = getMon(dateStr[0]);
         a[2] = Integer.parseInt(dateStr[2]);
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     public final int[] getDateYYYYMonDD(String strDate) {
         format = "YYYY Mon DD";
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         String[] dateStr = strDate.split(" ");
         dateStr[2] = getReplaceDay(dateStr[2]);
         a[0] = Integer.parseInt(dateStr[2]);
-        a[1] = getMonth(dateStr[1]);
+        a[1] = getMon(dateStr[1]);
         a[2] = Integer.parseInt(dateStr[0]);
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     public final int[] getDateDDMonthYYYY(String strDate) {
         format = "DD Month YYYY";
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         String[] dateStr = strDate.split(" ");
         dateStr[0] = getReplaceDay(dateStr[0]);
         a[0] = Integer.parseInt(dateStr[0]);
         a[1] = getMonth(dateStr[1]);
         a[2] = Integer.parseInt(dateStr[2]);
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     public final int[] getDateYYYYMonthDD(String strDate) {
         format = "YYYY Month DD";
-        int[] a = new int[3];
+        int[] a = new int[3], b = {0 , 0 , 0};
         String[] dateStr = strDate.split(" ");
         dateStr[2] = getReplaceDay(dateStr[2]);
         a[0] = Integer.parseInt(dateStr[2]);
         a[1] = getMonth(dateStr[1]);
         a[2] = Integer.parseInt(dateStr[0]);
-        return a;
+        return (toCheckValidDate(a))? a : b;
     }
 
     public final String putDateDDMMYYYY(int a[]) {
         format = "DD/MM/YYYY";
-        return String.format("%02d", a[0]) + "/" + String.format("%02d", a[1]) + "/" + String.format("%04d", a[2]);
+        return toCheckValidDate(a) ? String.format("%02d", a[0]) + "/" + String.format("%02d", a[1]) + "/" + String.format("%04d", a[2]) : "Invalid Date";
     }
 
     public final String putDateMMDDYYYY(int a[]) {
         format = "MM/DD/YYYY";
-        return String.format("%02d", a[1]) + "/" + String.format("%02d", a[0]) + "/" + String.format("%04d", a[2]);
+        return toCheckValidDate(a) ? String.format("%02d", a[1]) + "/" + String.format("%02d", a[0]) + "/" + String.format("%04d", a[2]) : "Invalid Date";
     }
 
     public final String putDateYYYYMMDD(int a[]) {
         format = "YYYY/MM/DD";
-        return String.format("%04d", a[2]) + "/" + String.format("%02d", a[1]) + "/" + String.format("%02d", a[0]);
+        return toCheckValidDate(a) ? String.format("%04d", a[2]) + "/" + String.format("%02d", a[1]) + "/" + String.format("%02d", a[0]) : "Invalid Date";
     }
 
     public final String putDateYYYYDDMM(int a[]) {
         format = "YYYY/DD/MM";
-        return String.format("%04d", a[2]) + "/" + String.format("%02d", a[0]) + "/" + String.format("%02d", a[1]);
+        return toCheckValidDate(a) ? String.format("%04d", a[2]) + "/" + String.format("%02d", a[0]) + "/" + String.format("%02d", a[1]) : "Invalid Date";
     }
 
     public final String putDateMMDDYY20(int a[]) {
         format = "MM/DD/YY";
-        return String.format("%02d", a[1]) + "/" + String.format("%02d", a[0]) + "/" + String.format("%02d", a[2] - 2000);
+        return toCheckValidDate(a) ? String.format("%02d", a[1]) + "/" + String.format("%02d", a[0]) + "/" + String.format("%02d", a[2] - 2000) : "Invalid Date";
     }
 
     public final String putDateMMDDYY19(int a[]) {
         format = "MM/DD/YY";
-        return String.format("%02d", a[1]) + "/" + String.format("%02d", a[0]) + "/" + String.format("%02d", a[2] - 1900);
+        return toCheckValidDate(a) ? String.format("%02d", a[1]) + "/" + String.format("%02d", a[0]) + "/" + String.format("%02d", a[2] - 1900) : "Invalid Date";
     }
 
     public final String putDateDDMMYY20(int a[]) {
         format = "DD/MM/YY";
-        return String.format("%02d", a[0]) + "/" + String.format("%02d", a[1]) + "/" + String.format("%02d", a[2] - 2000);
+        return toCheckValidDate(a) ? String.format("%02d", a[0]) + "/" + String.format("%02d", a[1]) + "/" + String.format("%02d", a[2] - 2000) : "Invalid Date";
     }
 
     public final String putDateDDMMYY19(int a[]) {
         format = "DD/MM/YY";
-        return String.format("%02d", a[0]) + "/" + String.format("%02d", a[1]) + "/" + String.format("%02d", a[2] - 1900);
+        return toCheckValidDate(a) ? String.format("%02d", a[0]) + "/" + String.format("%02d", a[1]) + "/" + String.format("%02d", a[2] - 1900) : "Invalid Date";
     }
 
     public final String putDateCodeMMDDYYYY(int a[]) {
         format = "MMDDYYYY";
-        return String.format("%02d", a[1]) + String.format("%02d", a[0]) + String.format("%04d", a[2]);
+        return toCheckValidDate(a) ? String.format("%02d", a[1]) + String.format("%02d", a[0]) + String.format("%04d", a[2]) : "Invalid Date";
     }
 
     public final String putDateCodeDDMMYYYY(int a[]) {
         format = "DDMMYYYY";
-        return String.format("%02d", a[0]) + String.format("%02d", a[1]) + String.format("%04d", a[2]);
+        return toCheckValidDate(a) ? String.format("%02d", a[0]) + String.format("%02d", a[1]) + String.format("%04d", a[2]) : "Invalid Date";
     }
 
     public final String putDateCodeYYYYDDMM(int a[]) {
         format = "YYYYDDMM";
-        return String.format("%04d", a[2]) + String.format("%02d", a[0]) + String.format("%02d", a[1]);
+        return toCheckValidDate(a) ? String.format("%04d", a[2]) + String.format("%02d", a[0]) + String.format("%02d", a[1]) : "Invalid Date";
     }
 
     public final String putDateCodeYYYYMMDD(int a[]) {
         format = "YYYYMMDD";
-        return String.format("%04d", a[2]) + String.format("%02d", a[1]) + String.format("%02d", a[0]);
+        return toCheckValidDate(a) ? String.format("%04d", a[2]) + String.format("%02d", a[1]) + String.format("%02d", a[0]) : "Invalid Date";
     }
 
     public final String putDateCodeMMDDYY20(int a[]) {
         format = "MMDDYY";
-        return String.format("%02d", a[1]) + String.format("%02d", a[0]) + String.format("%02d", (a[2] - 2000));
+        return toCheckValidDate(a) ? String.format("%02d", a[1]) + String.format("%02d", a[0]) + String.format("%02d", (a[2] - 2000)) : "Invalid Date";
     }
 
     public final String putDateCodeDDMMYY20(int a[]) {
         format = "DDMMYY";
-        return String.format("%02d", a[0]) + String.format("%02d", a[1]) + String.format("%02d", (a[2] - 2000));
+        return toCheckValidDate(a) ? String.format("%02d", a[0]) + String.format("%02d", a[1]) + String.format("%02d", (a[2] - 2000)) : "Invalid Date";
     }
 
     public final String putDateCodeMMDDYY19(int a[]) {
         format = "MMDDYY";
-        return String.format("%02d", a[1]) + String.format("%02d", a[0]) + String.format("%02d", (a[2] - 1900));
+        return toCheckValidDate(a) ? String.format("%02d", a[1]) + String.format("%02d", a[0]) + String.format("%02d", (a[2] - 1900)) : "Invalid Date";
     }
 
     public final String putDateCodeDDMMYY19(int a[]) {
         format = "DDMMYY";
-        return String.format("%02d", a[0]) + String.format("%02d", a[1]) + String.format("%02d", (a[2] - 2000));
+        return toCheckValidDate(a) ? String.format("%02d", a[0]) + String.format("%02d", a[1]) + String.format("%02d", (a[2] - 2000)) : "Invalid Date";
     }
 
     public final String putDateMonDDYYYY(int a[]) {
         format = "Mon DD YYYY";
-        return putMon(a[1]) + " " + a[0] + " " + a[2];
+        return toCheckValidDate(a) ? putMon(a[1]) + " " + a[0] + " " + a[2] : "Invalid Date";
     }
 
     public final String putDateDDMonYYYY(int a[]) {
         format = "DD Mon YYYY";
-        return a[0] + " " + putMon(a[1]) + " " + a[2];
+        return toCheckValidDate(a) ? a[0] + " " + putMon(a[1]) + " " + a[2] : "Invalid Date";
     }
 
     public final String putDateYYYYMonDD(int a[]) {
         format = "YYYY Mon DD";
-        return a[2] + " " + putMon(a[1]) + " " + a[0];
+        return toCheckValidDate(a) ? a[2] + " " + putMon(a[1]) + " " + a[0] : "Invalid Date";
     }
 
     public final String putDateDDMonthYYYY(int a[]) {
         format = "DD Month YYYY";
-        return a[0] + putReplaceDay(a[0]) + " " + putMonth(a[1]) + " " + a[2];
+        return toCheckValidDate(a) ? a[0] + putReplaceDay(a[0]) + " " + putMonth(a[1]) + " " + a[2] : "Invalid Date";
     }
 
     public final String putDateYYYYMonthDD(int a[]) {
         format = "YYYY Month DD";
-        return a[2]+ " " + putMonth(a[1]) + " " + a[0] + putReplaceDay(a[0]);
+        return toCheckValidDate(a) ? a[2]+ " " + putMonth(a[1]) + " " + a[0] + putReplaceDay(a[0]) : "Invalid Date";
     }
 
     public final int toUnivno(int a[]) {
@@ -595,7 +584,7 @@ public class DateArithmetic {
         return toGetDaysBetweenDates( a,  b);
     }
 
-    public final int[] toFindDate(int d1[], int n) {
+    public final int[] toFindNewDate(int d1[], int n) {
         int a = toUnivno(d1);
         int b = a + n;
         return toDate(b);
