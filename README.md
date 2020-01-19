@@ -7,14 +7,16 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
 
 # To Check a Valid Date
 
-     getDate -> toCheckValidDate
      getDate -> toUnivno -> toCheckValidDate
+     getDate -> toCheckValidDate
 
 # To Find Day of the Day
 
      getDate -> toUnivno -> toDay
+     getDate -> toDay
 
 # To Find a new date
+
      getDate, Integer -> toFindNewDate  -> putDate
 
 # To get Dates and Sort Dates

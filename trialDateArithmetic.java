@@ -72,8 +72,12 @@ class Date {
 //      toUnivno
         System.out.println("\ntoUniv() \t\t\t\t\t" + a.toUnivno(a.getDateDDMMYYYY("01/02/2010")));
 
-//      toDay
+//      toDate
         System.out.println("\ntoDate() \t\t\t\t\t" +a.putDateDDMMYYYY(a.toDate(a.toUnivno(a.getDateDDMMYYYY("01/02/2010")))));
+
+//      toDay
+        System.out.println("\ntoDay() from Univarsal Number \t\t\t" +a.toDay(a.toUnivno(a.getDateDDMMYYYY("01/02/2010"))));
+        System.out.println("toDay() from Date \t\t\t\t" +a.toDay(a.getDateDDMMYYYY("01/02/2010")));
 
 //      toFindDate
         System.out.println("\ntoFindNewDate() \t\t\t\t" +a.putDateDDMMYYYY(a.toFindNewDate(a.getDateDDMMYYYY("01/02/2010"),100)));
