@@ -1,6 +1,5 @@
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class DateArithmetic {
     private String format;
