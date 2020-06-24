@@ -26,8 +26,7 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
 
 # getDate Methods
   You can get Dates from various Formats. getDate Methods takes *String Value* as arguments. getDate Methods returns in *Integer Array Values*.If Invalid Date is given it  returns a *array "b" with a value of {0, 0, 0}* .
-
-
+```java
     int[] getDateDDMMYYYY(String strDate)  01/02/2010
     int[] getDateMMDDYYYY(String strDate)  02/01/2010  
     int[] getDateYYYYDDMM(String strDate)  2010/01/02
@@ -49,7 +48,7 @@ This DateArithmetic Class is Designed to work All the Date Calculations After Ch
    * *a[0] - Day   // 01*
    * *a[1] - Month // 02*
    * *a[2] - Year  //2010*
-
+```
 # putDate Methods
   You can print Dates from various Formats using putDate Methods. putDate Methods takes *Integer Array Value* as arguments. putDate Methods returns in *String Value*.If Invalid Date is given it  returns *"Invalid Date"* .
 
